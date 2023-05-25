@@ -1,6 +1,28 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <stdbool.h>
+
+void armazenarCaracteresUnicos(const char *string, char *array) {
+    bool caracteres[256] = { false };  // Array de flags para rastrear caracteres usados
+    
+    while (*string) {
+        if (*string != '\n') {  // Verifica se o caractere não é uma nova linha
+            caracteres[(unsigned char)*string] = true;  // Marca o caractere como usado
+        }
+        string++;
+    }
+    
+    int index = 0;
+    for (int i = 0; i < 256; i++) {
+        if (caracteres[i]) {
+            array[index++] = (char)i;  // Armazena o caractere no array
+        }
+    }
+    
+    array[index] = '\0';  // Adiciona o caractere nulo para indicar o final do array
+}
+
 
 // Estrutura para representar um nó da árvore de Huffman
 struct HuffmanNode {
@@ -102,18 +124,26 @@ void printHuffmanCodes(struct HuffmanNode* root, int arr[], int top) {
 
 // Função principal
 int main() {
-    char characters[] = { 'A', 'B', 'C', 'D', 'E', 'F' };
+    //char characters[] = { 'A', 'B', 'C', 'D', 'E', 'F' };
     unsigned frequencies[] = { 5, 9, 12, 13, 16, 45 };
-    int size = sizeof(characters) / sizeof(characters[0]);
+    char characters[256];
+    char string[10001];  // Array para armazenar a string lida (com espaço para 10000 caracteres)
+    armazenarCaracteresUnicos(string, characters);
+    printf("Digite uma string: ");
+    scanf("%[^\n]%*c", string);  // Lê a string até o caractere de nova linha
+    //int size = sizeof(characters) / sizeof(characters[0]);
+
+    
+    printf("Caracteres unicos: %s\n", characters);
 
     // Constrói a árvore de Huffman
-    struct HuffmanNode* root = buildHuffmanTree(characters, frequencies, size);
+    //struct HuffmanNode* root = buildHuffmanTree(characters, frequencies, size);
 
     // Imprime os códigos Huffman
-    int arr[100];
-    int top = 0;
-    printf("Códigos Huffman:\n");
-    printHuffmanCodes(root, arr, top);
+    //int arr[100];
+    //int top = 0;
+    //printf("Códigos Huffman:\n");
+    //printHuffmanCodes(root, arr, top);
 
     return 0;
 }
