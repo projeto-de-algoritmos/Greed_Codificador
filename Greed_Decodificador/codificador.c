@@ -3,7 +3,7 @@
 #include <string.h>
 #include <stdbool.h>
 
-void armazenarCaracteresUnicos(const char *string, char *array) {
+void armazenarCaracteresUnicos(char *string, char *array) {
     bool caracteres[256] = { false };  // Array de flags para rastrear caracteres usados
     
     while (*string) {
@@ -23,7 +23,19 @@ void armazenarCaracteresUnicos(const char *string, char *array) {
     array[index] = '\0';  // Adiciona o caractere nulo para indicar o final do array
 }
 
-
+void armazenafrequencias(char *string, char *caracteres, int *frequencias) {
+    for (int i = 0; caracteres[i] != '\0'; i++)
+    {
+        int contador = 0;
+        for (int j = 0; i < string[j]; j++)
+        {
+            if(string[j] == caracteres[i])
+                contador++;
+        }
+        frequencias[i] = contador;
+    }
+    
+}
 
 // Estrutura para representar um nó da árvore de Huffman
 struct HuffmanNode {
@@ -126,17 +138,17 @@ void printHuffmanCodes(struct HuffmanNode* root, int arr[], int top) {
 // Função principal
 int main() {
     //char characters[] = { 'A', 'B', 'C', 'D', 'E', 'F' };
-    unsigned frequencies[] = { 5, 9, 12, 13, 16, 45 };
+    
     char characters[256];
     char string[10001];  // Array para armazenar a string lida (com espaço para 10000 caracteres)
-    armazenarCaracteresUnicos(string, characters);
     printf("Digite uma string: ");
     scanf("%[^\n]%*c", string);  // Lê a string até o caractere de nova linha
     //int size = sizeof(characters) / sizeof(characters[0]);
 
-    
+    armazenarCaracteresUnicos(string, characters);
+    int frequencias[strlen(characters)];
     printf("Caracteres unicos: %s\n", characters);
-
+    armazenafrequencias(string, characters, frequencias);
     // Constrói a árvore de Huffman
     //struct HuffmanNode* root = buildHuffmanTree(characters, frequencies, size);
 
