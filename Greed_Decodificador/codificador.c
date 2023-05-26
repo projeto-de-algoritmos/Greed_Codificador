@@ -24,6 +24,7 @@ void armazenarCaracteresUnicos(const char *string, char *array) {
 }
 
 
+
 // Estrutura para representar um nó da árvore de Huffman
 struct HuffmanNode {
     char character;
