@@ -84,11 +84,9 @@ struct HuffmanNode* buildHuffmanTree(char characters[], unsigned frequencies[], 
 
 // Função auxiliar para imprimir a sequência de binários entre colchetes
 void printBinaryString(char* binaryString) {
-    printf("[");
     for (int i = 0; binaryString[i] != '\0'; i++) {
         printf("%c", binaryString[i]);
     }
-    printf("]");
 }
 
 // Função auxiliar para imprimir os códigos Huffman e suas representações binárias
