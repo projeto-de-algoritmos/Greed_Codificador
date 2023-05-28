@@ -126,37 +126,47 @@ void printHuffmanCodes(struct HuffmanNode* root, int arr[], int top) {
         arr[top] = 1;
         printHuffmanCodes(root->right, arr, top + 1);
     }
-    if (isLeaf(root)) {
-        printf("%c: ", root->character);
+    if (isLeaf(root) && root->character != '\0') {
+        printf("%c: [", root->character);
         for (int i = 0; i < top; ++i) {
             printf("%d", arr[i]);
         }
-        printf("\n");
+        printf("]\n");
     }
 }
 
 // Função principal
 int main() {
-    //char characters[] = { 'A', 'B', 'C', 'D', 'E', 'F' };
-    
     char characters[256];
-    char string[10001];  // Array para armazenar a string lida (com espaço para 10000 caracteres)
+    char string[10001];
+
     printf("Digite uma string: ");
     scanf("%[^\n]%*c", string);  // Lê a string até o caractere de nova linha
-    //int size = sizeof(characters) / sizeof(characters[0]);
 
     armazenarCaracteresUnicos(string, characters);
     int frequencias[strlen(characters)];
-    printf("Caracteres unicos: %s\n", characters);
+    printf("Caracteres únicos: %s\n", characters);
     armazenafrequencias(string, characters, frequencias);
+    int size = strlen(characters);
+    
     // Constrói a árvore de Huffman
-    //struct HuffmanNode* root = buildHuffmanTree(characters, frequencies, size);
+    struct HuffmanNode* root = buildHuffmanTree(characters, frequencias, size);
 
-    // Imprime os códigos Huffman
-    //int arr[100];
-    //int top = 0;
-    //printf("Códigos Huffman:\n");
-    //printHuffmanCodes(root, arr, top);
+    // Imprime os códigos Huffman e suas representações binárias
+    int arr[100];
+    int top = 0;
+    printf("Códigos Huffman:\n");
+    printHuffmanCodes(root, arr, top);
+
+    printf("Representações binárias:\n");
+    for (int i = 0; string[i] != '\0'; ++i) {
+        for (int j = 0; characters[j] != '\0'; ++j) {
+            if (string[i] == characters[j]) {
+                break;
+            }
+        }
+    }
+    printf("\n");
 
     return 0;
 }
