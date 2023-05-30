@@ -82,7 +82,7 @@ struct HuffmanNode* buildHuffmanTree(char characters[], unsigned frequencies[], 
     return root;
 }
 
-// Função auxiliar para imprimir a sequência de binários entre colchetes
+// Função auxiliar para imprimir a sequência de binários
 void printBinaryString(char* binaryString) {
     for (int i = 0; binaryString[i] != '\0'; i++) {
         printf("%c", binaryString[i]);
@@ -119,9 +119,9 @@ void printHuffmanCodes(struct HuffmanNode* root, int arr[], int top, char* binar
 // Função principal
 int main() {
     char characters[256];
-    char string[10001];  // Array para armazenar a string lida (com espaço para 10000 caracteres)
+    char string[10001];
     printf("Digite uma string: ");
-    scanf("%[^\n]%*c", string);  // Lê a string até o caractere de nova linha
+    scanf("%[^\n]%*c", string);
 
     // Armazena os caracteres únicos da string
     bool caracteres[256] = { false };
