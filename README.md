@@ -22,9 +22,10 @@ em 0 e 1 usando o programa, além de receber um gabarito de qual letra é repres
 
 ## Instalação 
 **Linguagem**: C<br>
-Para poder usar o programa basta usar os seguintes comandos: 
+Para poder usar o programa no Linux basta usar os seguintes comandos: 
 gcc -o codifcador ./Greed_Decodificador/codificador.c
 ./codificador
+Para poder usar o programa no Windows basta primerio baixar o gcc e depois seguir as mesmas instruções do Linux.
 
 ## Uso 
 Basta seguir as instruções que o programa vai te passar, e copiar a mensagem gerada, assim como a lista de tradução.
