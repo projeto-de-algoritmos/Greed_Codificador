@@ -82,7 +82,7 @@ struct HuffmanNode* buildHuffmanTree(char characters[], unsigned frequencies[], 
     return root;
 }
 
-// Função auxiliar para imprimir a sequência de binários
+// Função auxiliar para imprimir a sequência de binários entre colchetes
 void printBinaryString(char* binaryString) {
     for (int i = 0; binaryString[i] != '\0'; i++) {
         printf("%c", binaryString[i]);
@@ -116,11 +116,13 @@ void printHuffmanCodes(struct HuffmanNode* root, int arr[], int top, char* binar
     }
 }
 
-// Função principal
+
 int main() {
     char characters[256];
-    char string[10001];
-    printf("Digite uma string: ");
+    char string[10001];  
+    printf("███████████████████████████████\n████╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬███\n██╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬██\n█╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬█\n█╬╬╬███████╬╬╬╬╬╬╬╬╬███████╬╬╬█\n█╬╬██╬╬╬╬███╬╬╬╬╬╬╬███╬╬╬╬██╬╬█\n█╬██╬╬╬╬╬╬╬██╬╬╬╬╬██╬╬╬╬╬╬╬██╬█\n█╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬██\n█╬╬╬╬█████╬╬╬╬╬╬╬╬╬╬█████╬╬╬╬██\n█╬╬█████████╬╬╬╬╬╬╬█████████╬╬█\n█╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬██\n█╬╬╬╬╬╬╬╬╬╬╬╬╬█╬╬╬╬╬╬╬╬╬╬╬╬╬╬██\n█╬╬╬╬╬╬╬╬╬╬╬╬╬█╬╬╬╬╬╬╬╬╬╬╬╬╬╬██\n█╬╬╬╬╬╬╬╬╬╬╬╬╬█╬╬╬╬╬╬╬╬╬╬╬╬╬╬██\n█╬╬╬▓▓▓▓╬╬╬╬╬╬╬█╬╬╬╬╬╬╬▓▓▓▓╬╬╬█\n█╬╬▓▓▓▓▓▓╬╬█╬╬╬█╬╬╬█╬╬▓▓▓▓▓▓╬╬█\n█╬╬╬▓▓▓▓╬╬██╬╬╬█╬╬╬██╬╬▓▓▓▓╬╬╬█\n█╬╬╬╬╬╬╬╬██╬╬╬╬█╬╬╬╬██╬╬╬╬╬╬╬╬█\n█╬╬╬╬╬████╬╬╬╬███╬╬╬╬████╬╬╬╬╬█\n█╬╬╬╬╬╬╬╬╬╬╬╬╬███╬╬╬╬╬╬╬╬╬╬╬╬██\n██╬╬█╬╬╬╬╬╬╬╬█████╬╬╬╬╬╬╬╬█╬╬██\n██╬╬██╬╬╬╬╬╬███████╬╬╬╬╬╬██╬╬██\n██╬╬▓███╬╬╬████╬████╬╬╬███▓╬╬██\n███╬╬▓▓███████╬╬╬███████▓▓╬╬███\n███╬╬╬╬▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓╬╬╬╬███\n████╬╬╬╬╬╬╬╬╬╬███╬╬╬╬╬╬╬╬╬╬████\n█████╬╬╬╬╬╬╬╬╬╬█╬╬╬╬╬╬╬╬╬██████\n██████╬╬╬╬╬╬╬╬███╬╬╬╬╬╬╬╬██████\n███████╬╬╬╬╬╬╬███╬╬╬╬╬╬████████\n████████╬╬╬╬╬╬███╬╬╬╬╬█████████\n█████████╬╬╬╬╬███╬╬╬╬╬█████████\n███████████╬╬╬╬█╬╬╬╬███████████\n███████████████████████████████\n");
+    printf("Bem-vindo espião, como foi apresentado no seu treinamento digite sua mensagem se utilizar acentos ou o charactere 'ç'\n");
+    printf("Digite sua mensagem: ");
     scanf("%[^\n]%*c", string);
 
     // Armazena os caracteres únicos da string
