@@ -154,7 +154,7 @@ int main() {
     int top = 0;
     printHuffmanCodes(root, arr, top, binaryStrings);
 
-    // Substitui cada caractere da string pela sua sequência de código Huffman entre colchetes
+    // Substitui cada caractere da string pela sua sequência de código Huffman
     printf("Representações binárias:\n");
     for (int i = 0; string[i] != '\0'; i++) {
         if (binaryStrings[(unsigned char)string[i]] != NULL) {
