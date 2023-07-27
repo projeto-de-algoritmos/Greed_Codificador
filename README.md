@@ -12,7 +12,11 @@
 ## Sobre 
 Este projeto é uma demonstração do código de Huffman com uma temática de espionagem, onde você é um espião que vai codificar uma mesagem
 em 0 e 1 usando o programa, além de receber um gabarito de qual letra é representada por qual sequência.
-Mais sobre o código no link https://youtu.be/uOMEb2yBKp0
+Mais sobre o código no link https://youtu.be/uOMEb2yBKp0 ou 
+
+https://github.com/projeto-de-algoritmos/Greed_Codificador/assets/54644579/f74f69e3-fae4-460e-b688-224882f499a1
+
+
 
 ## Screenshots
 ![image](https://github.com/projeto-de-algoritmos/Greed_Codificador/assets/73446334/23b0f5a2-2bc0-4541-aed7-a1d68b116854)
